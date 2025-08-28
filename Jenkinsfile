@@ -4,7 +4,7 @@ pipeline{
   stages{
     stage("build"){
        when {
-         expressio {
+         expression {
            BRANCH_NAME == 'main' && CODE_CHANGES == true
          }
        }
@@ -14,7 +14,7 @@ pipeline{
     }  
 stage("test"){
    when {
-         expressio {
+         expression {
            BRANCH_NAME == 'dev' 
          }
        }
